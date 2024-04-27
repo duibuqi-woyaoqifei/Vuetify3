@@ -1,35 +1,34 @@
-@import './base.css';
+/* 隐藏 Chrome、Safari 和 Opera 的滚动条 */
+body::-webkit-scrollbar {
+  display: none;
+}
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+/* 隐藏 IE、Edge 和 Firefox 的滚动条 */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 滚动条样式 */
+:root {
+  --sb-thumb-color: #c9c9c9;
+  --sb-size: 3px;
+}
+
+::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
 }
 
 a,
-.green {
+a:link,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+  color: inherit;
 }
